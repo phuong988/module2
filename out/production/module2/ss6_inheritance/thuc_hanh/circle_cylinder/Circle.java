@@ -1,6 +1,6 @@
-package out.production.module2.ss6_inheritance.bai_tap.circle_cylinder;
+package out.production.module2.ss6_inheritance.thuc_hanh.circle_cylinder;
 
-class Circle extends Shape{
+class Circle extends Shape {
     private double radius;
     Circle() {
         this.radius = 1.0;

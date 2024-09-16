@@ -1,6 +1,6 @@
-package out.production.module2.ss6_inheritance.bai_tap.circle_cylinder;
+package out.production.module2.ss6_inheritance.thuc_hanh.circle_cylinder;
 
-public class Rectangle extends Shape{
+public class Rectangle extends Shape {
     private double width =1.0;
     private double length =1.0;
     public Rectangle(){
