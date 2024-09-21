@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f324a8e1-7608-427b-9814-d30cfe6cec07" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../ss10_dsa_list/bai_tap/LinkedList/MyLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss10_dsa_list/bai_tap/LinkedList/MyLinkedListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ss8/bai_tap/CustomerManagement/Service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/module2/ss6_inheritance/bai_tap/circle_cylinder/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/production/module2/ss6_inheritance/bai_tap/circle_cylinder/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/module2/ss6_inheritance/bai_tap/circle_cylinder/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/production/module2/ss6_inheritance/bai_tap/circle_cylinder/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/production/module2/ss6_inheritance/bai_tap/circle_cylinder/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/production/module2/ss6_inheritance/bai_tap/circle_cylinder/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss10_dsa_list/bai_tap/array_list/MyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss10_dsa_list/bai_tap/array_list/MyList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss10_dsa_list/bai_tap/array_list/MyListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss10_dsa_list/bai_tap/array_list/MyListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss10_dsa_list/thuc_hanh/ArrayList/MyList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss10_dsa_list/thuc_hanh/ArrayList/MyList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss10_dsa_list/thuc_hanh/ArrayList/MyListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss10_dsa_list/thuc_hanh/ArrayList/MyListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss10_dsa_list/thuc_hanh/LinkedList/MyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss10_dsa_list/thuc_hanh/LinkedList/MyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss10_dsa_list/thuc_hanh/LinkedList/TestMyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss10_dsa_list/thuc_hanh/LinkedList/TestMyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_inheritance/bai_tap/circle_cylinder/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss6_inheritance/bai_tap/circle_cylinder/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss8/bai_tap/CustomerManagement/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8/bai_tap/CustomerManagement/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss8/bai_tap/CustomerManagement/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8/bai_tap/CustomerManagement/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss8/bai_tap/CustomerManagement/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8/bai_tap/CustomerManagement/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss8/bai_tap/CustomerManagement/view/CustomerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8/bai_tap/CustomerManagement/view/CustomerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss8/thuc_hanh/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8/thuc_hanh/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss8/thuc_hanh/CustomerManagement/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8/thuc_hanh/CustomerManagement/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss8/thuc_hanh/CustomerManagement/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8/thuc_hanh/CustomerManagement/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss8/thuc_hanh/CustomerManagement/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8/thuc_hanh/CustomerManagement/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss8/thuc_hanh/CustomerManagement/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8/thuc_hanh/CustomerManagement/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss8/thuc_hanh/CustomerManagement/view/CustomerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8/thuc_hanh/CustomerManagement/view/CustomerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss8/thuc_hanh/Refactoring.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss8/thuc_hanh/Refactoring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9_testing/bai_tap/fizz_buzz/FizzBuzz.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9_testing/bai_tap/fizz_buzz/FizzBuzz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9_testing/bai_tap/fizz_buzz/FizzBuzzException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9_testing/bai_tap/fizz_buzz/FizzBuzzException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9_testing/bai_tap/fizz_buzz/FizzBuzzTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9_testing/bai_tap/fizz_buzz/FizzBuzzTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9_testing/thuc_hanh/triangle_classification/TriangleClassfierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9_testing/thuc_hanh/triangle_classification/TriangleClassfierTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss9_testing/thuc_hanh/triangle_classification/TriangleClassifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ss9_testing/thuc_hanh/triangle_classification/TriangleClassifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/Rectangle.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2mKULeuZ19xfRXzxtPNRNHZahO3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/codegym/module2/src/src/ss1_introduction",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f324a8e1-7608-427b-9814-d30cfe6cec07" name="Changes" comment="" />
+      <created>1726824706501</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726824706501</updated>
+      <workItem from="1726824707525" duration="110000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
