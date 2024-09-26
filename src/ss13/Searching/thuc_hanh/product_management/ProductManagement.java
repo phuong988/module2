@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ProductManagement {
-     List<Product> products = new LinkedList<>();
+     static List<Product> products = new LinkedList<>();
     {
         addProduct(new Product("SP01", "Xiaomi node 14", 3000));
         addProduct(new Product("SP02", "Iphone", 4000));
