@@ -1,4 +1,4 @@
-package src.ss13.thuc_hanh.binary_search;
+package src.ss13.Searching.thuc_hanh.binary_search;
 
 
 import java.util.Scanner;

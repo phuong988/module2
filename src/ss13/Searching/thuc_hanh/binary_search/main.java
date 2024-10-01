@@ -1,7 +1,7 @@
-package src.ss13.thuc_hanh.binary_search;
+package src.ss13.Searching.thuc_hanh.binary_search;
 
-import static src.ss13.thuc_hanh.binary_search.BinarySearch.binarySearch;
-import static src.ss13.thuc_hanh.binary_search.BinarySearch.list;
+import static src.ss13.Searching.thuc_hanh.binary_search.BinarySearch.binarySearch;
+import static src.ss13.Searching.thuc_hanh.binary_search.BinarySearch.list;
 
 public class main {
     public static void main(String[] args) {

@@ -4,9 +4,11 @@ public class Circle extends Shape{
     private double radius = 1.0;
 
     public Circle() {
+        super(2.0, 2.0);
     }
 
     public Circle(double radius) {
+        super(2.0, 2.0);
         this.radius = radius;
     }
 

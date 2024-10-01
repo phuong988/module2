@@ -1,10 +1,9 @@
-package src.ss13.Searching.thuc_hanh.binary_search;
+package src.ss13.bai_tap.Searching.thuc_hanh.binary_search;
 
 
-import java.util.Scanner;
+import static src.ss13.bai_tap.Searching.thuc_hanh.binary_search.main.list;
 
 public class BinarySearch {
-    static int[] list = {2, 4, 7, 10, 11, 45, 50, 59, 60, 66, 69, 70, 79};
 
     static int binarySearch(int[] arr, int key) {
         int low = 0;

@@ -1,6 +1,6 @@
 package src.ss15.thuc_hanh;
 
-public class gfggf {
+public class test {
     public class X {
         public static void main(String [] args) {
             try         {

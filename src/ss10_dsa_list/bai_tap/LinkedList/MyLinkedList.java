@@ -1,6 +1,6 @@
 package src.ss10_dsa_list.bai_tap.LinkedList;
 
-import javafx.scene.Node;
+
 
 public class MyLinkedList<E> {
     private Node head;

@@ -1,4 +1,4 @@
-package src.ss13.bai_tap.longest_string;
+package src.ss13.Searching.bai_tap.longest_string;
 
 import  java.util.LinkedList;
 import java.util.Scanner;

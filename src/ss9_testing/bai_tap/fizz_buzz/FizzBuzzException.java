@@ -1,4 +1,4 @@
-package src.ss9_testing.thuc_hanh.fizz_buzz;
+package src.ss9_testing.bai_tap.fizz_buzz;
 
 public class FizzBuzzException extends RuntimeException {
 

@@ -1,4 +1,4 @@
-package src.ss13.Searching.bai_tap.binary_search;
+package src.ss13.bai_tap.Searching.bai_tap.binary_search;
 
 import java.util.ArrayList;
 import java.util.Comparator;

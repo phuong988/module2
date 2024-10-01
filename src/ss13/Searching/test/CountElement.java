@@ -1,26 +1,33 @@
-package src.ss13.test;
+package src.ss13.Searching.test;
 
-import java.util.ArrayList;
-import java.util.List;
 
-//public class CountElement {
-//    public static void main(String[] args) {}
-////    int[] arr= [1,3,4,1,2,4,2,3,5,7];
-//    public int countDuplicate(int arr[], int n) {
-//        int count = 0;
-//        List<Integer>[] arrDuplicate = new ArrayList[]{new ArrayList<>()};
-//        for (int i = 0; i < arr.length; i++) {
-//            for (int j = i + 1; j < arr.length - i; j++) {
-//                if (arr[i] == arr[j]) {
-//                    count++;
-//                    for (Integer integer : arrDuplicate[arr[i]]) {
-//
-//                    }
-//
-//                }
-//                break;
-//            }
-//        }
-//        System.out.println("so phan tu lap nhau là: " + count);
-//    }
-//}
+import java.util.HashMap;
+
+
+public class CountElement {
+    public static void main(String[] args) {
+        CountElement countElement = new CountElement();
+        int[] arr = {1, 3, 4, 1, 2, 4, 2, 3, 5, 7};
+        countElement.countDuplicate(arr);
+    }
+
+
+
+    public void countDuplicate(int arr[]) {
+        HashMap<Integer, Integer> countMap = new HashMap<>();
+        int duplicateCount = 0;
+
+        for (int num : arr) {
+            countMap.put(num, countMap.getOrDefault(num, 0) + 1);
+        }
+
+        for (int frequency : countMap.values()) {
+            if (frequency > 1) {
+                duplicateCount++;
+            }
+        }
+
+        System.out.println("Number of duplicate elements: " + duplicateCount);
+    }
+}
+

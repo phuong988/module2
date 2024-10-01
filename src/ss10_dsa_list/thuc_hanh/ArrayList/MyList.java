@@ -1,6 +1,5 @@
-package src.ss10_dsa_list.thuc_hanh.List;
+package src.ss10_dsa_list.thuc_hanh.ArrayList;
 
-import javax.lang.model.element.Element;
 import java.util.Arrays;
 
 public class MyList<E> {

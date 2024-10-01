@@ -9,6 +9,10 @@ public class Circle {
         this.color = color;
     }
 
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
     public String getColor() {
         return color;
     }

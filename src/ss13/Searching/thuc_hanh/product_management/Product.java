@@ -1,4 +1,4 @@
-package src.ss13.thuc_hanh.product_management;
+package src.ss13.Searching.thuc_hanh.product_management;
 
 public class Product implements Comparable<Product> {
 

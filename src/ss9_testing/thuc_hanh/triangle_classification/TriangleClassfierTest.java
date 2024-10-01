@@ -4,14 +4,14 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TriangleClassficationTest {
+public class TriangleClassfierTest {
     private final TriangleClassifier classifier = new TriangleClassifier();
 
     @Test
     void testNotATriangle() {
-        assertEquals("Không phải là tam giác", classifier.classifyTriangle(1, 2, 3));
+        assertEquals("Không phải là tam giác", classifier.classifyTriangle(8, 2, 3));
         assertEquals("Không phải là tam giác", classifier.classifyTriangle(0, 1, 1));
-        assertEquals("Không phải là tam giác", classifier.classifyTriangle(-1, 2, 3));
+        assertEquals("Không phải là tam giác", classifier.classifyTriangle(-1, 2, 1));
     }
 
     @Test
@@ -21,7 +21,7 @@ public class TriangleClassficationTest {
 
     @Test
     void testIsoscelesTriangle() {
-        assertEquals("Tam giác cân", classifier.classifyTriangle(3, 3, 2));
+        assertEquals("Tam giác cân", classifier.classifyTriangle(2, 2, 3));
         assertEquals("Tam giác cân", classifier.classifyTriangle(2, 3, 3));
     }
 

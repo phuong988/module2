@@ -1,6 +1,4 @@
-package src.ss10_dsa_list.thuc_hanh.List;
-
-import javax.xml.soap.SAAJMetaFactory;
+package src.ss10_dsa_list.thuc_hanh.ArrayList;
 
 public class MyListTest {
     public static void main(String[] args) {

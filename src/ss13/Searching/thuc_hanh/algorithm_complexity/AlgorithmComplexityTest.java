@@ -1,4 +1,4 @@
-package src.ss13.thuc_hanh.algorithm_complexity;
+package src.ss13.Searching.thuc_hanh.algorithm_complexity;
 
 import java.util.*;
 

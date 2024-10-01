@@ -1,6 +1,6 @@
-package src.ss13.Searching.thuc_hanh.algorithm_complexity;
+package src.ss13.bai_tap.Searching.thuc_hanh.algorithm_complexity;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class AlgorithmComplexityTest {
     public static void main(String[] args) {

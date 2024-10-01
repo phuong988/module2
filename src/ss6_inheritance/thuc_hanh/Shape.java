@@ -4,7 +4,7 @@ public class Shape {
     private String color = "green";
     private boolean filled = true;
 
-    public Shape() {
+    public Shape(double v1, double v) {
     }
 
     public Shape(String color, boolean filled) {
@@ -35,4 +35,6 @@ public class Shape {
                 + " and "
                 + (isFilled() ? "filled" : "not filled");
     }
+
+
 }
