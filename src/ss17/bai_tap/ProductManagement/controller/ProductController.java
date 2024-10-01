@@ -9,14 +9,14 @@ public class ProductController {
     private final ProductService productService = new ProductService();
     private final Scanner scanner = new Scanner(System.in);
 
-    // Hàm này hiển thị menu và nhận lựa chọn từ người dùng
     public void start() {
         while (true) {
             System.out.println("\n--- Product Manager ---");
             System.out.println("1. Add product");
             System.out.println("2. Display all products");
             System.out.println("3. Search product by ID");
-            System.out.println("4. Exit");
+            System.out.println("4. Delete product by ID");
+            System.out.println("5. Exit");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine();  // Consume newline
@@ -26,12 +26,15 @@ public class ProductController {
                     addProduct();
                     break;
                 case 2:
-                    productService.displayAllProducts();
+                    productService.displayAll();
                     break;
                 case 3:
                     searchProductById();
                     break;
                 case 4:
+                    deleteProductById();
+                    break;
+                case 5:
                     System.out.println("Exiting...");
                     return;
                 default:
@@ -40,7 +43,6 @@ public class ProductController {
         }
     }
 
-    // Nhận dữ liệu từ người dùng để thêm sản phẩm
     private void addProduct() {
         System.out.print("Enter product ID: ");
         String productId = scanner.nextLine();
@@ -55,14 +57,19 @@ public class ProductController {
         String description = scanner.nextLine();
 
         Product product = new Product(productId, name, price, manufacturer, description);
-        productService.addProduct(product);
+        productService.add(product);
         System.out.println("Product added successfully!");
     }
 
-    // Nhận mã sản phẩm từ người dùng để tìm kiếm
     private void searchProductById() {
         System.out.print("Enter product ID to search: ");
         String productId = scanner.nextLine();
-        productService.searchProductById(productId);
+        productService.searchById(productId);
+    }
+    private void deleteProductById() {
+        System.out.print("Enter product ID to delete: ");
+        String productId = scanner.nextLine();
+        productService.deleteById(productId);
+        System.out.println("Product deleted successfully!");
     }
 }

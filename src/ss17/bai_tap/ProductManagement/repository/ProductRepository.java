@@ -6,24 +6,11 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductRepository {
+public class ProductRepository implements IRepository<Product> {
     private static final String FILE_PATH = "products.txt";
 
-    // Ghi danh sách sản phẩm ra file nhị phân
-    public void writeProductsToFile(List<Product> products) {
-        try {
-            FileOutputStream fos = new FileOutputStream(FILE_PATH);
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(products);
-            oos.close();
-            fos.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // Đọc danh sách sản phẩm từ file nhị phân
-    public List<Product> readProductsFromFile() {
+    @Override
+    public List<Product> getAll() {
         List<Product> products = new ArrayList<>();
         try {
             FileInputStream fis = new FileInputStream(FILE_PATH);
@@ -35,5 +22,32 @@ public class ProductRepository {
             e.printStackTrace();
         }
         return products;
+    }
+
+    @Override
+    public void saveAll(List<Product> products) {
+        try {
+            FileOutputStream fos = new FileOutputStream(FILE_PATH);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(products);
+            oos.close();
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void add(Product product) {
+        List<Product> products = getAll();
+        products.add(product);
+        saveAll(products);
+    }
+
+    @Override
+    public void delete(Product product) {
+        List<Product> products = getAll();
+        products.remove(product);
+        saveAll(products);
     }
 }

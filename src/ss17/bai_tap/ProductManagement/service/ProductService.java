@@ -5,24 +5,22 @@ import src.ss17.bai_tap.ProductManagement.repository.ProductRepository;
 import java.util.List;
 
 
-public class ProductService {
+public class ProductService implements IService<Product> {
     private final ProductRepository productRepository = new ProductRepository();
 
-    // Lấy danh sách sản phẩm từ file
-    public List<Product> getAllProducts() {
-        return productRepository.readProductsFromFile();
+    @Override
+    public List<Product> getAll() {
+        return productRepository.getAll();
     }
 
-    // Thêm sản phẩm mới vào danh sách và ghi ra file
-    public void addProduct(Product product) {
-        List<Product> products = getAllProducts();
-        products.add(product);
-        productRepository.writeProductsToFile(products);
+    @Override
+    public void add(Product product) {
+        productRepository.add(product);
     }
 
-    // Hiển thị tất cả các sản phẩm
-    public void displayAllProducts() {
-        List<Product> products = getAllProducts();
+    @Override
+    public void displayAll() {
+        List<Product> products = getAll();
         if (products.isEmpty()) {
             System.out.println("No products found.");
         } else {
@@ -32,9 +30,9 @@ public class ProductService {
         }
     }
 
-    // Tìm kiếm sản phẩm theo mã
-    public void searchProductById(String productId) {
-        List<Product> products = getAllProducts();
+    @Override
+    public void searchById(String productId) {
+        List<Product> products = getAll();
         boolean found = false;
         for (Product product : products) {
             if (product.getProductId().equals(productId)) {
@@ -46,5 +44,25 @@ public class ProductService {
         if (!found) {
             System.out.println("Product with ID " + productId + " not found.");
         }
+    }
+
+    @Override
+    public void deleteById(String productId) {
+        List<Product> products = getAll();
+        boolean found = false;
+        for (int i = 0; i < products.size(); i++) {
+            Product product = products.get(i);
+            if (product.getProductId().equals(productId)) {
+                products.remove(i);
+                System.out.println("Product with ID " + productId + " has been deleted.");
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("Product with ID " + productId + " not found.");
+        }
+        //cap nhap file sau khi xóa
+        productRepository.saveAll(products);
     }
 }
