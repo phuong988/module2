@@ -1,0 +1,17 @@
+package src.ss12_map_tree.bai_tap.product_management.service;
+
+import src.ss12_map_tree.bai_tap.product_management.model.Product;
+
+import java.util.List;
+
+public interface IProductService {
+    List<Product> findAll();
+
+    void save(Product product);
+
+    Product findById(int id);
+
+    void delete(Product product);
+
+    void update(Product product);
+}
