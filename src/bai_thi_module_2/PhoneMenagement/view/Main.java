@@ -1,192 +1,152 @@
 package src.bai_thi_module_2.PhoneMenagement.view;
-import java.util.List;
-import java.util.Scanner;
+
 import src.bai_thi_module_2.PhoneMenagement.model.GenuinePhone;
 import src.bai_thi_module_2.PhoneMenagement.model.HandbookPhone;
 import src.bai_thi_module_2.PhoneMenagement.repository.GenuinePhoneRepository;
 import src.bai_thi_module_2.PhoneMenagement.repository.HandBookPhoneRepository;
 
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
-        private GenuinePhoneRepository genuinePhoneRepository = new GenuinePhoneRepository();
-        private HandBookPhoneRepository handBookPhoneRepository = new HandBookPhoneRepository();
-        private Scanner scanner = new Scanner(System.in);
-
-        public void showMenu() {
-            while (true) {
-                System.out.println("      CHƯƠNG TRÌNH QUẢN LÝ ĐIỆN THOẠI   \n" +
-                        "Chọn chức năng theo số (để tiếp tục): \n" +
-                        "1. Thêm mới \n" +
-                        "2. Xóa \n" +
-                        "3. Xem danh sách điện thoại \n" +
-                        "4. Tìm kiếm \n" +
-                        "5. Thoát\n" +
-                        "Chọn chức năng: ");
-
-                try {
-                    int choose = Integer.parseInt(scanner.nextLine());
-                    switch (choose) {
-                        case 1:
-                            System.out.println("---------------------------Thêm điện thoại---------------------------");
-                            addPhone();
-                            break;
-                        case 2:
-                            System.out.println("---------------------------Xoá điện thoại---------------------------");
-                            deletePhone();
-                            break;
-                        case 3:
-                            System.out.println("---------------------------Hiển thị danh sách điện thoại---------------------------");
-                            showListPhone();
-                            break;
-                        case 4:
-                            System.out.println("---------------------------Tìm điện thoại---------------------------");
-                            searchPhone();
-                            break;
-                        case 5:
-                            System.exit(0);
-                        default:
-                            System.out.println("Lựa chọn không hợp lệ, vui lòng chọn lại.");
-                    }
-
-                } catch (NumberFormatException e) {
-                    System.out.println("Lỗi: bạn nhập không phải là số nguyên");
-                }
-            }
-        }
-
-        private void addPhone() {
-            System.out.println("Chọn loại điện thoại cần thêm: \n" +
-                    "1. Điện thoại chính hãng (GenuinePhone) \n" +
-                    "2. Điện thoại xách tay (HandbookPhone)");
-            int choose = Integer.parseInt(scanner.nextLine());
-            switch (choose) {
-                case 1:
-                    // Thêm điện thoại chính hãng
-                    GenuinePhone genuinePhone = new GenuinePhone();
-                    System.out.println("Nhập ID:");
-                    genuinePhone.setId(scanner.nextLine());
-                    System.out.println("Nhập tên điện thoại:");
-                    genuinePhone.setTenDienThoai(scanner.nextLine());
-                    System.out.println("Nhập giá bán:");
-                    genuinePhone.setGiaBan(Double.parseDouble(scanner.nextLine()));
-                    System.out.println("Nhập số lượng:");
-                    genuinePhone.setSoLuong(Integer.parseInt(scanner.nextLine()));
-                    System.out.println("Nhập nhà sản xuất:");
-                    genuinePhone.setNhaSanXuat(scanner.nextLine());
-                    System.out.println("Nhập thời gian bảo hành:");
-                    genuinePhone.setThoiGianBaoHanh(Integer.parseInt(scanner.nextLine()));
-                    System.out.println("Nhập phạm vi bảo hành:");
-                    genuinePhone.setPhamViBaoHanh(scanner.nextLine());
-                    List<GenuinePhone> genuinePhones = genuinePhoneRepository.findAll();
-                    genuinePhones.add(genuinePhone);
-                    genuinePhoneRepository.writeFile(genuinePhones);
-                    break;
-
-                case 2:
-                    // Thêm điện thoại xách tay
-                    HandbookPhone handbookPhone = new HandbookPhone();
-                    System.out.println("Nhập ID:");
-                    handbookPhone.setId(scanner.nextLine());
-                    System.out.println("Nhập tên điện thoại:");
-                    handbookPhone.setTenDienThoai(scanner.nextLine());
-                    System.out.println("Nhập giá bán:");
-                    handbookPhone.setGiaBan(Double.parseDouble(scanner.nextLine()));
-                    System.out.println("Nhập số lượng:");
-                    handbookPhone.setSoLuong(Integer.parseInt(scanner.nextLine()));
-                    System.out.println("Nhập nhà sản xuất:");
-                    handbookPhone.setNhaSanXuat(scanner.nextLine());
-                    System.out.println("Nhập quốc gia sách tay:");
-                    handbookPhone.setQuocGiaSachTay(scanner.nextLine());
-                    System.out.println("Nhập trạng thái:");
-                    handbookPhone.setTrangThai(scanner.nextLine());
-                    List<HandbookPhone> handbookPhones = handBookPhoneRepository.findAll();
-                    handbookPhones.add(handbookPhone);
-                    handBookPhoneRepository.writeFile(handbookPhones);
-                    break;
-
-                default:
-                    System.out.println("Lựa chọn không hợp lệ.");
-            }
-        }
-
-        private void deletePhone() {
-            System.out.println("Chọn loại điện thoại cần xoá: \n" +
-                    "1. Điện thoại chính hãng (GenuinePhone) \n" +
-                    "2. Điện thoại xách tay (HandbookPhone)");
-            int choose = Integer.parseInt(scanner.nextLine());
-            System.out.println("Nhập ID điện thoại cần xoá:");
-            String id = scanner.nextLine();
-            switch (choose) {
-                case 1:
-                    GenuinePhone genuinePhone = genuinePhoneRepository.findPhoneByID(id);
-                    if (genuinePhone != null) {
-                        genuinePhoneRepository.deletePhone(genuinePhone);
-                        System.out.println("Đã xoá điện thoại chính hãng thành công.");
-                    } else {
-                        System.out.println("Không tìm thấy điện thoại chính hãng với ID: " + id);
-                    }
-                    break;
-
-                case 2:
-                    HandbookPhone handbookPhone = handBookPhoneRepository.findPhoneByID(id);
-                    if (handbookPhone != null) {
-                        handBookPhoneRepository.deletePhone(handbookPhone);
-                        System.out.println("Đã xoá điện thoại xách tay thành công.");
-                    } else {
-                        System.out.println("Không tìm thấy điện thoại xách tay với ID: " + id);
-                    }
-                    break;
-
-                default:
-                    System.out.println("Lựa chọn không hợp lệ.");
-            }
-        }
-
-        private void showListPhone() {
-            System.out.println("Chọn loại điện thoại cần hiển thị: \n" +
-                    "1. Điện thoại chính hãng (GenuinePhone) \n" +
-                    "2. Điện thoại xách tay (HandbookPhone)");
-            int choose = Integer.parseInt(scanner.nextLine());
-            switch (choose) {
-                case 1:
-                    List<GenuinePhone> genuinePhoneList = genuinePhoneRepository.showListPhone();
-                    for (GenuinePhone phone : genuinePhoneList) {
-                        System.out.println(phone);
-                    }
-                    break;
-
-                case 2:
-                    List<HandbookPhone> handbookPhoneList = handBookPhoneRepository.showListPhone();
-                    for (HandbookPhone phone : handbookPhoneList) {
-                        System.out.println(phone);
-                    }
-                    break;
-
-                default:
-                    System.out.println("Lựa chọn không hợp lệ.");
-            }
-        }
-
-        private void searchPhone() {
-            System.out.println("Nhập ID của điện thoại cần tìm:");
-            String id = scanner.nextLine();
-            GenuinePhone genuinePhone = genuinePhoneRepository.findPhoneByID(id);
-            HandbookPhone handbookPhone = handBookPhoneRepository.findPhoneByID(id);
-            if (genuinePhone == null && handbookPhone == null) {
-                System.out.println("Không tìm thấy điện thoại với ID: " + id);
-            } else {
-                if (genuinePhone != null) {
-                    System.out.println(genuinePhone);
-                }
-                if (handbookPhone != null) {
-                    System.out.println(handbookPhone);
-                }
-            }
-        }
+        private static final Scanner scanner = new Scanner(System.in);
+        private static final GenuinePhoneRepository genuinePhoneRepo = new GenuinePhoneRepository();
+        private static final HandBookPhoneRepository handbookPhoneRepo = new HandBookPhoneRepository();
 
         public static void main(String[] args) {
-            Main main = new Main();
-            main.showMenu();
+            showMenu();
+        }
+
+        public static void showMenu() {
+            while (true) {
+                System.out.println("CHƯƠNG TRÌNH QUẢN LÍ ĐIỆN THOẠI \n" +
+                        "Chọn chức năng: \n" +
+                        "1. Thêm mới điện thoại chính hãng \n" +
+                        "2. Thêm mới điện thoại sách tay \n" +
+                        "3. Xoá điện thoại \n" +
+                        "4. Xem danh sách điện thoại \n" +
+                        "5. Tìm kiếm điện thoại \n" +
+                        "6. Thoát");
+
+                int choice = Integer.parseInt(scanner.nextLine());
+
+                switch (choice) {
+                    case 1:
+                        addGenuinePhone();
+                        break;
+                    case 2:
+                        addHandbookPhone();
+                        break;
+                    case 3:
+                        deletePhone();
+                        break;
+                    case 4:
+                        showAllPhones();
+                        break;
+                    case 5:
+                        searchPhone();
+                        break;
+                    case 6:
+                        System.exit(0);
+                        break;
+                    default:
+                        System.out.println("Lựa chọn không hợp lệ. Vui lòng thử lại.");
+                }
+            }
+        }
+
+        private static void addGenuinePhone() {
+            System.out.println("Nhập ID: ");
+            String id = scanner.nextLine();
+            System.out.println("Nhập tên điện thoại: ");
+            String name = scanner.nextLine();
+            System.out.println("Nhập giá bán: ");
+            double price = Double.parseDouble(scanner.nextLine());
+            System.out.println("Nhập số lượng: ");
+            int quantity = Integer.parseInt(scanner.nextLine());
+            System.out.println("Nhập nhà sản xuất: ");
+            String manufacturer = scanner.nextLine();
+            System.out.println("Nhập thời gian bảo hành: ");
+            int warrantyPeriod = Integer.parseInt(scanner.nextLine());
+            System.out.println("Nhập phạm vi bảo hành: ");
+            String warrantyScope = scanner.nextLine();
+
+            GenuinePhone genuinePhone = new GenuinePhone(id, name, price, quantity, manufacturer, warrantyPeriod, warrantyScope);
+            genuinePhoneRepo.add(genuinePhone);
+            System.out.println("Thêm điện thoại chính hãng thành công!");
+        }
+
+        private static void addHandbookPhone() {
+            System.out.println("Nhập ID: ");
+            String id = scanner.nextLine();
+            System.out.println("Nhập tên điện thoại: ");
+            String name = scanner.nextLine();
+            System.out.println("Nhập giá bán: ");
+            double price = Double.parseDouble(scanner.nextLine());
+            System.out.println("Nhập số lượng: ");
+            int quantity = Integer.parseInt(scanner.nextLine());
+            System.out.println("Nhập nhà sản xuất: ");
+            String manufacturer = scanner.nextLine();
+            System.out.println("Nhập quốc gia xách tay: ");
+            String country = scanner.nextLine();
+            System.out.println("Nhập trạng thái: ");
+            String status = scanner.nextLine();
+
+            HandbookPhone handbookPhone = new HandbookPhone(id, name, price, quantity, manufacturer, country, status);
+            handbookPhoneRepo.add(handbookPhone);
+            System.out.println("Thêm điện thoại sách tay thành công!");
+        }
+
+        private static void deletePhone() {
+            System.out.println("Nhập ID điện thoại cần xóa: ");
+            String id = scanner.nextLine();
+
+            // Tìm và xóa điện thoại trong cả hai loại
+            GenuinePhone genuinePhone = genuinePhoneRepo.findById(id);
+            if (genuinePhone != null) {
+                genuinePhoneRepo.delete(genuinePhone);
+                System.out.println("Đã xóa điện thoại chính hãng có ID: " + id);
+                return;
+            }
+
+            HandbookPhone handbookPhone = handbookPhoneRepo.findById(id);
+            if (handbookPhone != null) {
+                handbookPhoneRepo.delete(handbookPhone);
+                System.out.println("Đã xóa điện thoại sách tay có ID: " + id);
+                return;
+            }
+
+            System.out.println("Không tìm thấy điện thoại với ID: " + id);
+        }
+
+        private static void showAllPhones() {
+            System.out.println("Danh sách điện thoại chính hãng:");
+            List<GenuinePhone> genuinePhones = genuinePhoneRepo.getAllPhone();
+            for (GenuinePhone phone : genuinePhones) {
+                System.out.println(phone);
+            }
+
+            System.out.println("Danh sách điện thoại sách tay:");
+            List<HandbookPhone> handbookPhones = handbookPhoneRepo.getAllPhone();
+            for (HandbookPhone phone : handbookPhones) {
+                System.out.println(phone);
+            }
+        }
+
+        private static void searchPhone() {
+            System.out.println("Nhập tên điện thoại cần tìm: ");
+            String name = scanner.nextLine();
+
+            List<GenuinePhone> foundGenuinePhones = genuinePhoneRepo.findByName(name);
+            List<HandbookPhone> foundHandbookPhones = handbookPhoneRepo.findByName(name);
+
+            System.out.println("Kết quả tìm kiếm:");
+            for (GenuinePhone phone : foundGenuinePhones) {
+                System.out.println(phone);
+            }
+            for (HandbookPhone phone : foundHandbookPhones) {
+                System.out.println(phone);
+            }
         }
     }
-}
+

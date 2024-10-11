@@ -6,55 +6,80 @@ import src.bai_thi_module_2.PhoneMenagement.utils.ReadWriteFile;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.lang.Double.parseDouble;
+public class HandBookPhoneRepository implements IPhoneRepository<HandbookPhone> {
+    private final String FILE_HANDBOOKPHONE = "D:\\codegym\\module2\\src\\src\\bai_thi_module_2\\PhoneMenagement\\data\\handbookPhone.csv";
 
-public class HandBookPhoneRepository {
-    private final String FILE_HANKBOOKPHONE = "D:\\codegym\\module2\\src\\src\\bai_thi_module_2\\PhoneMenagement\\data\\handbookPhone.csv";
 
-    public List<HandbookPhone> findAll() {
-        List<String> stringList = ReadWriteFile.readFile(FILE_HANKBOOKPHONE);
-        List<HandbookPhone> handbookPhoneList = new ArrayList<>();
-        for (String line : stringList) {
-            String[] arr = line.split(",");
-            String id = arr[0];
-            String tenDienThoai = arr[1];
-            double giaBan = parseDouble(arr[2]);
-            int soLuong = Integer.parseInt(arr[3]);
-            String nhaSanXuat = arr[4];
-            String quocGiaSachTay = arr[5];
-            String trangThai = arr[6];
+    @Override
+    public void add(HandbookPhone entity) {
+        List<HandbookPhone> phoneCellularList = getAllPhone();
+        phoneCellularList.add(entity);
 
-            HandbookPhone handbookPhone = new HandbookPhone(id, tenDienThoai, giaBan, soLuong, nhaSanXuat, quocGiaSachTay, trangThai);
-            handbookPhoneList.add(handbookPhone);
-        }
-        return handbookPhoneList;
+        writeFile(phoneCellularList);
     }
 
+    @Override
     public void writeFile(List<HandbookPhone> list) {
         List<String> stringList = new ArrayList<>();
-        for (HandbookPhone handbookPhone : list) {
-            stringList.add(handbookPhone.csvHandbookPhone());
+        for (HandbookPhone cellular : list) {
+            stringList.add(cellular.csvHandbookPhone());
         }
-        ReadWriteFile.writeFile(FILE_HANKBOOKPHONE, stringList, false);
+
+        ReadWriteFile.writeFile(FILE_HANDBOOKPHONE, stringList, false);
     }
 
-    public void deletePhone(HandbookPhone handbookPhone) {
-        List<HandbookPhone> handbookPhoneList = findAll();
-        handbookPhoneList.removeIf(existingPhone -> existingPhone.getId().equals(handbookPhone.getId()));
-        writeFile(handbookPhoneList);
+    @Override
+    public List<HandbookPhone> getAllPhone() {
+        List<String> stringList = ReadWriteFile.readFile(FILE_HANDBOOKPHONE);
+        List<HandbookPhone> phoneCellularList = new ArrayList<>();
+        for (String cellular : stringList) {
+            String[] split = cellular.split(",");
+            String id = split[0];
+            String tenDienThoai = split[1];
+            double giaBan = Double.parseDouble(split[2]);
+            int soLuong = Integer.parseInt(split[3]);
+            String nhaSanXuat = split[4];
+            String quocGiaXachTay = split[5];
+            String trangThai = split[6];
+
+            HandbookPhone phoneCellular = new HandbookPhone(id,tenDienThoai, giaBan, soLuong, nhaSanXuat, quocGiaXachTay, trangThai);
+            phoneCellularList.add(phoneCellular);
+        }
+        return phoneCellularList;
     }
 
-    public List<HandbookPhone> showListPhone() {
-        return findAll();
+    @Override
+    public void delete(HandbookPhone entity) {
+        List<HandbookPhone> phoneCellularList = getAllPhone();
+        for (HandbookPhone phoneCellular : phoneCellularList) {
+            if (phoneCellular.getId().equals(entity.getId())) {
+                phoneCellularList.remove(phoneCellular);
+                break;
+            }
+        }
+        writeFile(phoneCellularList);
     }
 
-    public HandbookPhone findPhoneByID(String id) {
-        List<HandbookPhone> handbookPhones = findAll();
-        for (HandbookPhone handbookPhone : handbookPhones) {
-            if (handbookPhone.getId().equals(id)) {
-                return handbookPhone;
+    @Override
+    public HandbookPhone findById(String id) {
+        List<HandbookPhone> phoneCellularList = getAllPhone();
+        for (HandbookPhone phoneCellular : phoneCellularList) {
+            if (phoneCellular.getId().equals(id)) {
+                return phoneCellular;
             }
         }
         return null;
+    }
+
+    @Override
+    public List<HandbookPhone> findByName(String name) {
+        List<HandbookPhone> phoneCellularList = getAllPhone();
+        List<HandbookPhone> result = new ArrayList<>();
+        for (HandbookPhone phoneCellular : phoneCellularList) {
+            if (phoneCellular.getTenDienThoai().toLowerCase().contains(name.toLowerCase())) {
+                result.add(phoneCellular);
+            }
+        }
+        return result;
     }
 }
